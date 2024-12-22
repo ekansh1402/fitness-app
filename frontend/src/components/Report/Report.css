@@ -1,0 +1,123 @@
+/* Report Page */
+.reportpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding: 20px; */
+    min-height: 100vh;
+    width: 100%; /* Take full width of the window */
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text */
+  }
+  
+  /* Title */
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #00ff88; /* Neon green */
+  }
+  
+  /* Time Range Buttons */
+  .time-range-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .time-range-button {
+    padding: 10px 20px;
+    border: 1px solid #00ff88;
+    border-radius: 5px;
+    background: #1a1a1a;
+    color: #ffffff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  
+  .time-range-button.active,
+  .time-range-button:hover {
+    background: #00ff88;
+    color: #000000;
+  }
+  
+  /* Chart Wrapper */
+  .chart-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%; /* Full width */
+  }
+  
+  .chart-container {
+    width: 100%; /* Take full width */
+    max-width: 1200px; /* Optional: Limit maximum width for readability */
+    height: 400px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #1a1a1a;
+    border: 1px solid #00ff88;
+  }
+  
+  /* Placeholder Text for Empty Data */
+  p {
+    color: #bbbbbb; /* Muted color for placeholders */
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Edit Button */
+  .editbutton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ff7b00;
+    color: #000000;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+  
+  .editbutton:hover {
+    background-color: #e56f00;
+    transform: scale(1.1);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .chart-container {
+      height: 300px;
+    }
+  
+    h2 {
+      font-size: 1.8rem;
+    }
+  
+    .time-range-button {
+      font-size: 0.8rem;
+      padding: 8px 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .chart-container {
+      height: 250px;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    .time-range-button {
+      font-size: 0.7rem;
+      padding: 6px 10px;
+    }
+  }
+  

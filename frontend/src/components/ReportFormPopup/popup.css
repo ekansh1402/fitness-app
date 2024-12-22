@@ -1,0 +1,265 @@
+/* Popup container */
+.popupout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background */
+    z-index: 1000;
+}
+
+/* Popup box */
+.popupbox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+    border: 2px solid #00ff88;
+    box-shadow: 0 0 20px #00ff88;
+    width: 600px; /* Increased width */
+    max-height: 80%;
+    padding: 20px;
+    border-radius: 15px;
+    overflow-y: auto;
+}
+
+/* Close button in the screen corner */
+.popupbox .close {
+    /* background: #ff00ff; */
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 40px;
+    position: fixed; /* Fixed positioning */
+    top: 20px;
+    right: 20px;
+    /* box-shadow: 0 0 10px #ff00ff; */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    z-index: 1001;
+}
+
+
+.popupbox .close:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ff00ff;
+}
+
+/* MUI TextField customization */
+.MuiTextField-root {
+    width: 100%;
+    margin-bottom: 10px;
+    background: #1a1a1a;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #00ff88;
+}
+
+.MuiInputBase-input {
+    color: #ffffff !important; /* White text */
+}
+
+.MuiInputLabel-root {
+    color: #00ff88 !important; /* Neon green label */
+}
+
+.MuiInputBase-input::placeholder {
+    color: #bbbbbb !important; /* Lighter placeholder */
+    opacity: 1;
+}
+
+/* Date Selector Fix */
+.react-horizontal-datepicker {
+    width: 100% !important; /* Full width */
+    overflow: hidden;
+}
+
+.react-horizontal-datepicker .date-picker {
+    justify-content: space-between;
+}
+
+.react-horizontal-datepicker .date-picker .date {
+    color: #00ff88;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Time Clock Box */
+.timebox {
+    background: #1a1a1a;
+    border: 2px solid #00ff88;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px #00ff88;
+    margin: 10px 0;
+    transform: scale(0.9); /* Slightly smaller */
+}
+
+/* Buttons */
+.popupbox .save-btn {
+    background-color: #ff7b00;
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff7b00;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.popupbox .save-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ff7b00;
+}
+
+/* List item buttons */
+.popupbox .items .item button {
+    background: #00ff88;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.popupbox .items .item button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #00ff88;
+}
+
+.item{
+    display:flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+/* General picker background and text */
+.MuiPickersLayout-root,
+.MuiDayCalendar-root,
+.MuiClock-root {
+    background-color: #000000 !important; /* Black background */
+    color: #ffffff !important; /* White text */
+}
+
+/* Calendar days and clock numbers */
+.MuiTypography-root {
+    color: #ffffff !important; /* White text for all numbers and labels */
+}
+
+/* Selected date and time */
+.Mui-selected {
+    background-color: #00ff88 !important; /* Neon green for selected item */
+    color: #000000 !important; /* Black text for contrast */
+}
+
+/* Clock pointer and clock center pin */
+.MuiClockPointer-root,
+.MuiClockPointer-thumb {
+    background-color: #00ff88 !important; /* Neon green pointer */
+}
+
+.MuiClock-pin {
+    background-color: #00ff88 !important; /* Neon green pin */
+}
+
+/* Hover state for calendar and clock items */
+.MuiPickersDay-day:hover,
+.MuiClockNumber-root:hover {
+    background-color: #00ff88 !important; /* Neon green on hover */
+    color: #000000 !important; /* Black text */
+}
+
+/* Add a contrasting color for non-selected calendar days */
+.MuiDayCalendar-weekDayLabel, 
+.MuiPickersDay-root {
+    color: #bbbbbb !important; /* Light grey for non-selected days */
+}
+
+/* Selected day styles */
+.Mui-selected {
+    background-color: #00ff88 !important; /* Neon green */
+    color: #000000 !important; /* Black text */
+}
+
+/* Non-current month days (optional - faded look) */
+.MuiDayCalendar-dayOutsideMonth {
+    color: #555555 !important; /* Dark grey for days outside the current month */
+}
+
+/* Hover state for non-selected days */
+.MuiPickersDay-root:hover {
+    background-color: #00ff88 !important; /* Neon green on hover */
+    color: #000000 !important; /* Black text */
+}
+/* Clock numbers - Default (non-selected) state */
+.MuiClockNumber-root {
+    color: #bbbbbb !important; /* Light grey for non-selected clock numbers */
+}
+
+/* Selected clock number */
+.Mui-selected {
+    background-color: #00ff88 !important; /* Neon green for selected */
+    color: #000000 !important; /* Black text for selected */
+}
+
+/* Hover state for clock numbers */
+.MuiClockNumber-root:hover {
+    background-color: #00ff88 !important; /* Neon green background on hover */
+    color: #000000 !important; /* Black text */
+}
+
+/* Clock pointer and center pin styles */
+.MuiClockPointer-root,
+.MuiClockPointer-thumb,
+.MuiClock-pin {
+    background-color: #00ff88 !important; /* Neon green pointer and pin */
+}
+/* Calendar and Clock icon fix */
+.MuiSvgIcon-root {
+    color: #ffffff !important; /* White color for default unselected icons */
+  }
+  
+  /* Selected icon fix (if needed) */
+  .Mui-selected .MuiSvgIcon-root {
+    color: #000000 !important; /* Black color for selected icon */
+  }
+  
+
+  .setInputs {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .setItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  
+  .setItem h4 {
+    margin: 0;
+  }
+  
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ff0000;
+  }
+  
