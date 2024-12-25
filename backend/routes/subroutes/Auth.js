@@ -7,14 +7,7 @@ const jwt = require("jsonwebtoken");
 const bcryptjs = require("bcryptjs");
 const nodemailer = require("nodemailer");
 
-//ardo snju okez dpwp
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: "virajj014@gmail.com",
-    pass: "ardosnjuokezdpwp",
-  },
-});
+
 
 router.get("/test", async (req, res) => {
   res.json({
@@ -112,30 +105,7 @@ router.post("/login", async (req, res, next) => {
     next(err);
   }
 });
-router.post("/sendotp", async (req, res) => {
-  try {
-    const { email } = req.body;
-    const otp = Math.floor(100000 + Math.random() * 900000);
 
-    const mailOptions = {
-      from: "virajj014@gmail.com",
-      to: email,
-      subject: "OTP for verification",
-      text: `Your OTP is ${otp}`,
-    };
-
-    transporter.sendMail(mailOptions, async (err, info) => {
-      if (err) {
-        console.log(err);
-        res.status(500).json(createResponse(false, err.message));
-      } else {
-        res.json(createResponse(true, "OTP sent successfully", { otp }));
-      }
-    });
-  } catch (err) {
-    next(err);
-  }
-});
 router.post("/checklogin", authTokenHandler, async (req, res, next) => {
   res.json({
     ok: true,
